@@ -1,12 +1,14 @@
 Package: xe-duckdns
-Version: 0.1.38
+Version: 0.1.39
 Section: misc
 Priority: extra
 Architecture: all
 Maintainer: Jakobus Schürz <jakob@xundeenergie.at>
 Homepage: http://github.com/xundeenergie/xe-duckdns
 Provides: xe-duckdns
-Depends: deb-systemd-helper-new
+Depends: deb-systemd-helper-new, curl, network-manager-customsettings
 Recommends: 
 Description: Dynamic-DNS with duckdns.org
  Update dynamic-dns with duckdns.org as systemd-unit
+ Go to http://www.duckdns.org and register a domain, get a token and copy the example in /etc/duckdns.conf.d/example.conf to $DOMAIN.conf.
+ Enable the domain with systemctl enable duckdns@$DOMAIN.timer

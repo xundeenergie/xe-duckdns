@@ -1,0 +1,9 @@
+How to enable dynamic-DNS with systemd
+
+1) Register an account at http://www.duckdns.org
+2) Choose a domain there (for example "exampledomain" -> dynamic domain ist exampledomain.duckdns.org)
+3) get the token and create a file /etc/duckdns.conf.d/exampledomain.conf 
+4) echo "TOKEN=the-token-for-the-domain" > /etc/duckdns.conf.d/exampledomain.conf
+5) enable dynamic-dns with 
+    systemctl enable duckdns@exampledomain.timer
+    systemctl start duckdns@exampledomain.timer
